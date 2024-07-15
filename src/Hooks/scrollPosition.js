@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+//EXPORTA UNA FUNCION QUE DETECTA CUANDO UN USUARIO HACE SCROLL HACIA ABAJO, SE BUSCA CAMBIAR EL ESTILO DEL NAVBAR CUANDO SUCEDA
 export const useScrollPosition = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 

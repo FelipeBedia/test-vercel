@@ -12,6 +12,7 @@ import {BasicCard2} from './Components/card2';
 import {BasicCard3} from './Components/card3';
 import { Menu } from './Screens/Menu';
 import {Historial} from './Screens/Historial';
+import { Buscador } from './Components/Buscador';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         </Router>
 
         <NavBar/>
-        
+        <Buscador/>
         <Home />
         <TablaProductos/>
         <BasicCard/>

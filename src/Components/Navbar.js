@@ -5,6 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 import { useScrollPosition } from "../Hooks/scrollPosition";
 
+//PARA ABRIR Y CERRAR EL NAVBAR
 export const NavBar = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
   const [windowDimension, setWindowDimension] = useState({
@@ -12,13 +13,15 @@ export const NavBar = () => {
     height: window.innerHeight,
   });
 
+  
+  //PARA EL CAMBIO DE TAMANO DE LA VENTANA SE CAMBIA EL NAVBAR
   const detectDimension = () => {
     setWindowDimension({
       width: window.innerWidth,
       height: window.innerHeight,
     });
   };
-
+  //DETECTA CUANDO EL ELEMENTO CAMBIA, ESTE SIENDO LA DIMENSION DE LA VENTANA
   useEffect(() => {
     window.addEventListener("resize", detectDimension);
     windowDimension.width > 800 && setNavBarOpen(false);
@@ -27,6 +30,7 @@ export const NavBar = () => {
     };
   }, [windowDimension]);
 
+   //LOS LINKS DE NAVEGACION//
   const links = [
     {
       id: 1,
@@ -45,7 +49,7 @@ export const NavBar = () => {
   ];
 
   const scrollPosition = useScrollPosition();
-
+  //AQUI SE BUSCA QUE EL ESTILO CAMBIE CUANDO SE HACE EL SCROLL HACIA ABAJO//
   return (
     <div
       className={
@@ -59,7 +63,10 @@ export const NavBar = () => {
     
       {!navBarOpen && <p className={styles.logo}>MEDEVIAL STORE</p>} 
       {!navBarOpen && windowDimension.width < 800 ? (
-        <AiOutlineMenu
+        
+       //PARA PODER ABRIR EL MENU Y CERRARLO EJECUTA UNA FUNCION PARA CAMBAIR EL ESTADO DEL USESTATE DE FALSO A VERDADERO Y DE VERDADERO A FALSO//
+
+       <AiOutlineMenu
           color="#f1f1f1"
           onClick={() => setNavBarOpen(!navBarOpen)}
           size={25}
@@ -73,7 +80,11 @@ export const NavBar = () => {
           />
         )
       )}
+
       {navBarOpen && (
+
+           //PASA PARAMETROS PARA ENTRAR AL LINK//
+
         <ul className={styles.linksContainer}>
           {links.map(({ id, link }) => (
             <div>
