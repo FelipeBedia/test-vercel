@@ -1,0 +1,18 @@
+.us p{
+    display: flex;
+    font-size: 2em;
+    font-weight: 400;
+    color: #ffffff;
+    padding-top: 90px;
+  }
+
+.us {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+    padding: 20px 20px 200px;
+    align-items: center;
+  }
+
